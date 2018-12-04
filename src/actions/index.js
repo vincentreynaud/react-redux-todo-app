@@ -6,6 +6,8 @@ export const filters = {
   DONE: "done"
 };
 
+export const SET_HEADLINE = "SET_HEADLINE";
+
 export const ADD_TODO = "ADD_TODO";
 export const UPDATE_TODO_TEXT = "UPDATE_TODO_TEXT";
 export const TOGGLE_TODO = "TOGGLE_TODO";
@@ -15,6 +17,10 @@ export const REMOVE_TODO = "REMOVE_TODO";
 // Action creators
 export const setFilter = filter => {
   return { type: SET_FILTER, filter }
+}
+
+export const setHeadline = text => {
+  return { type: SET_HEADLINE, text }
 }
 
 export const addToDo = text => {

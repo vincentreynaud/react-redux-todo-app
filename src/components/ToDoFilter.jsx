@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setFilter } from "../actions/index";
 
 class ToDoFilter extends Component {
   filters = ["all", "undone", "done"];
@@ -11,7 +13,7 @@ class ToDoFilter extends Component {
           role="group"
           aria-label="Set a filter to show items"
         >
-          {/* {this.filters.map(filter => (
+          {this.filters.map(filter => (
             <button
               type="button"
               className={`btn btn-light ${
@@ -24,11 +26,13 @@ class ToDoFilter extends Component {
             >
               {filter}
             </button>
-          ))} */}
+          ))}
         </div>
       </div>
     );
   }
 }
 
-export default ToDoFilter;
+export default connect(state => ({}), {
+  setFilter
+})(ToDoFilter);

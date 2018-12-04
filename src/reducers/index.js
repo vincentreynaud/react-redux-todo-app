@@ -2,12 +2,14 @@ import { combineReducers } from "redux";
 import * as actions from "../actions/index";
 import uuid from "uuid/v4";
 
-
-// const initialState = {
-//   headerTagline: "My ToDo List",
-//   filter: "undone",
-//   todoItems: {}
-// }
+function headline(state = { headline: "My ToDo List" }, action) {
+  switch (action.type) {
+    case actions.SET_HEADLINE:
+      return action.text;
+    default:
+      return state;
+  }
+}
 
 function filter(state = actions.filters.ALL, action) {
   switch (action.type) {
@@ -40,6 +42,21 @@ function toDoItems(state = {}, action) {
         }
       }
 
+    case actions.TOGGLE_TODO:
+      return {
+        ...state,
+        [action.uuid]: {
+          ...state[action.uuid],
+          done: !state[action.uuid].done
+        }
+      };
+
+    case actions.REMOVE_TODO:
+      let nextState = { ...state };
+      delete nextState[action.uuid];
+      return nextState;
+
+
     default:
       return state;
   }
@@ -47,6 +64,7 @@ function toDoItems(state = {}, action) {
 
 const appReducer = combineReducers({
   toDoItems,
+  headline,
   filter
 })
 export default appReducer;

@@ -9,9 +9,8 @@ class NotFound extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
-        <p>update heder tagline and wrap message in jumbo?</p>
-        <div className="alert alert-warning">
+        <Header headline="404 Error" tagline="Page not found" />
+        <div className="alert alert-warning container">
           <strong>Ooops.... sorry! </strong><br />
           The requested page could not be found.
         </div>

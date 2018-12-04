@@ -9,8 +9,7 @@ class Help extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
-        <p>update heder tagline and wrap questions in jumbo?</p>
+        <Header headline="Help" tagline="We answer here some FAQs" />
       </Fragment>
     );
   }
