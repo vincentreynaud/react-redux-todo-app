@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Header from "./Header";
 import ToDoForm from "./ToDoForm";
-import Filters from "./Filters";
+import ToDoFilter from "./ToDoFilter";
 import ToDoList from "./ToDoList";
-
 
 class App extends Component {
   render() {
@@ -11,7 +10,7 @@ class App extends Component {
       <div className="container">
         <Header />
         <ToDoForm />
-        <Filters />
+        <ToDoFilter />
         <ToDoList />
       </div>
     );
