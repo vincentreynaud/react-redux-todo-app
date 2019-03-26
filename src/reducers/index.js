@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import * as actions from "../actions/index";
 import uuid from "uuid/v4";
 
-function headline(state = { headline: "My ToDo List" }, action) {
+function headline(state = {}, action) {
   switch (action.type) {
     case actions.SET_HEADLINE:
       return action.text;
