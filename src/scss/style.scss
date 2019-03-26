@@ -4,6 +4,36 @@
   margin-bottom: 1rem;
 }
 
+.jumbotron {
+  border-radius: 0;
+  background-color: #e2f6f8;
+
+  @media (min-width: 576px) {
+    padding: 2rem 2rem 4rem 2rem;
+  }
+
+  .headline {
+    display: inline-block;
+    background-color: inherit;
+    padding: .3rem;
+    border: 1px solid transparent;
+    font-size: 2.5rem;
+    font-weight: 300;
+
+    @media (min-width: 576px) {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+
+
+.container {
+  max-width: 620px;
+}
+
+
+
 .table-borderless > tbody > tr > td,
 .table-borderless > tbody > tr > th,
 .table-borderless > tfoot > tr > td,
@@ -60,3 +90,4 @@
     height: auto;
   }
 }
+
