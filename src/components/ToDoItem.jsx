@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { updateToDoText, toggleToDo, removeToDo } from "../actions/index";
 
 class ToDoItem extends Component {
-  handleInputKeyUp(e) {
+  handleInputKeyUp = e => {
     // Remove focus when the [Enter] key is pressed
     if (e.keyCode === 13) {
       e.target.blur();

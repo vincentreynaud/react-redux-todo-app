@@ -1,15 +1,28 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+import { setHeadline } from "../actions/index";
 
 class Header extends Component {
+  componentDidMount() {
+    this.props.setHeadline("My ToDo List")
+  }
+
   render() {
     return (
-      <div className="jumbotron">
-        <h1 className="display-4">{this.props.headline}</h1>
-        <p className="lead tagline">{this.props.tagline}</p>
+      <div className="jumbotron container">
+        <input 
+          type="text" 
+          className="headline" 
+          value={this.props.headline} 
+          onChange={e => {
+          this.props.setHeadline(e.target.value)
+          }}
+        />
       </div>
     );
   }
 }
 
-export default Header;
+export default connect(state => ({}), {
+  setHeadline,
+})(Header);;

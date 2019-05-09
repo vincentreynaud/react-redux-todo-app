@@ -3,7 +3,7 @@ import Header from "./Header";
 
 class Help extends Component {
   componentDidMount() {
-    document.title = "Help | React/Redux ToDo List"
+    document.title = "Help | React/Redux ToDo App"
   }
 
   render() {

@@ -3,7 +3,7 @@ import Header from "./Header";
 
 class NotFound extends Component {
   componentDidMount() {
-    document.title = "Not Found | React/Redux ToDo List"
+    document.title = "Not Found | React/Redux ToDo App"
   }
 
   render() {
