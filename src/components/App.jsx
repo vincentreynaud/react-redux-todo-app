@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
 import Header from "./Header";
 import ToDoForm from "./ToDoForm";
 import ToDoFilter from "./ToDoFilter";
@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header headline="My ToDo List" tagline="This could be my shopping list" />
+        <Header headline="ToDo" tagline="This could be my shopping list" />
         <div className="container">
           <ToDoForm />
           <ToDoFilter />
