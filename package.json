@@ -6,7 +6,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-build": "npm run build"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
@@ -18,7 +19,7 @@
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
     "uuid": "^3.3.2"
   },

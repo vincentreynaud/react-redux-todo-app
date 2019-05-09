@@ -1,15 +1,15 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 html {
-  background: #cfffef;
+  background: #fdd575;
 }
 
 body {
   max-width: 450px;
-  height: 75vh;
-  margin: 2rem auto;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  height: 70vh;
+  margin: 3rem auto;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .header {
@@ -17,11 +17,11 @@ body {
 }
 
 .jumbotron {
-  border-radius: 5px 5px 0 0 !important;
-  background: #ecd2d2;
+  border-radius: 10px 10px 0 0 !important;
+  background: #fd9a51;
 
   @media (min-width: 576px) {
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 1.5rem 2rem 3rem 2rem;
   }
 
   .headline {
@@ -31,6 +31,7 @@ body {
     border: 1px solid transparent;
     font-size: 2.5rem;
     font-weight: 300;
+    width: 100%;
 
     @media (min-width: 576px) {
       font-size: 3.5rem;
