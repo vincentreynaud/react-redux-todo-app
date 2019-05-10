@@ -1,14 +1,22 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 html {
-  background: #617cfb;
+  // background: #617cfb;
   // background: #56eedf;
+  // background: #6a82fb;
+  background: #4e54c8;
+  background: linear-gradient(to bottom, #8f94fb, #4e54c8);
+  min-height: 100%;
 }
 
 body {
-  max-width: 450px;
-  height: 70vh;
-  margin: 3rem auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 80vh;
+  height: fit-content;
+  max-width: 40vw;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
@@ -18,9 +26,14 @@ body {
 }
 
 .jumbotron {
-  border-radius: 10px 10px 0 0 !important;
-  background: #fd9a51;
+  // background: #fd9a51;
   // background: #fdd575;
+  // background: #fc5c7d;
+  // background: #bc4e9c;
+  // background: linear-gradient(to right, #f80759, #bc4e9c);
+  background: #d3cce3;
+  background: linear-gradient(to bottom, #e9e4f0, #d3cce3);
+  border-radius: 10px 10px 0 0 !important;
 
   @media (min-width: 576px) {
     padding: 1.5rem 2rem 3rem 2rem;
@@ -42,7 +55,7 @@ body {
 }
 
 .container {
-  max-width: 620px;
+  // max-width: 620px;
 }
 
 .table-borderless > tbody > tr > td,
