@@ -21,6 +21,20 @@ body {
   border-radius: 10px;
 }
 
+footer {
+  position: absolute;
+  bottom: 0.75rem;
+
+  a {
+    color: #444444;
+
+    &:hover {
+      color: #000000;
+      text-decoration: none;
+    }
+  }
+}
+
 .header {
   margin-bottom: 1rem;
 }
