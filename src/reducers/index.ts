@@ -1,28 +1,51 @@
 import { combineReducers } from "redux";
-import * as actions from "../actions/index";
 import uuid from "uuid/v4";
 
-function headline(state = {}, action) {
+import * as actions from "../actions/index";
+import {
+  Filters,
+  TodoState,
+  FilterState,
+  HeadlineState,
+  SetFilterAction,
+  SetHeadlineAction,
+  TodoActionTypes,
+  SET_FILTER,
+  SET_HEADLINE,
+  ADD_TODO,
+  UPDATE_TODO_TEXT,
+  TOGGLE_TODO,
+  REMOVE_TODO
+} from "../types";
+
+const initialTodoState: TodoState = {};
+const initialFilterState: FilterState = actions.filters.ALL;
+const initialHeadlineState: HeadlineState = "";
+
+function headline(state = initialHeadlineState, action: SetHeadlineAction) {
   switch (action.type) {
-    case actions.SET_HEADLINE:
+    case SET_HEADLINE:
       return action.text;
     default:
       return state;
   }
 }
 
-function filter(state = actions.filters.ALL, action) {
+function filter(state = initialFilterState, action: SetFilterAction) {
   switch (action.type) {
-    case actions.SET_FILTER:
+    case SET_FILTER:
       return action.filter;
     default:
       return state;
   }
 }
 
-function toDoItems(state = {}, action) {
+function todoItems(
+  state = initialTodoState,
+  action: TodoActionTypes
+): TodoState {
   switch (action.type) {
-    case actions.ADD_TODO:
+    case ADD_TODO:
       const id = uuid();
       return {
         ...state,
@@ -33,16 +56,16 @@ function toDoItems(state = {}, action) {
         }
       };
 
-    case actions.UPDATE_TODO_TEXT:
+    case UPDATE_TODO_TEXT:
       return {
         ...state,
         [action.uuid]: {
           ...state[action.uuid],
           text: action.text
         }
-      }
+      };
 
-    case actions.TOGGLE_TODO:
+    case TOGGLE_TODO:
       return {
         ...state,
         [action.uuid]: {
@@ -51,11 +74,10 @@ function toDoItems(state = {}, action) {
         }
       };
 
-    case actions.REMOVE_TODO:
+    case REMOVE_TODO:
       let nextState = { ...state };
       delete nextState[action.uuid];
       return nextState;
-
 
     default:
       return state;
@@ -63,8 +85,8 @@ function toDoItems(state = {}, action) {
 }
 
 const appReducer = combineReducers({
-  toDoItems,
+  todoItems,
   headline,
   filter
-})
+});
 export default appReducer;

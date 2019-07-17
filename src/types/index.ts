@@ -1,6 +1,24 @@
-// export interface Store {...};
+export interface Filters {
+  ALL: string;
+  UNDONE: string;
+  DONE: string;
+}
 
-// duplicate, find better solution
+export interface TodoItem {
+  uuid: string;
+  text: string;
+  done: boolean;
+}
+
+export type HeadlineState = string;
+
+export type FilterState = string;
+
+export interface TodoState {
+  [uuid: string]: TodoItem;
+}
+
+// Action Types
 export const SET_FILTER = "SET_FILTER";
 export const SET_HEADLINE = "SET_HEADLINE";
 export const ADD_TODO = "ADD_TODO";
@@ -8,41 +26,40 @@ export const UPDATE_TODO_TEXT = "UPDATE_TODO_TEXT";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 
-export interface Filters {
-  ALL: string,
-  UNDONE: string,
-  DONE: string
-}
-
 export interface SetFilterAction {
-  type: typeof SET_FILTER
-  filter: string
+  type: typeof SET_FILTER;
+  filter: string;
 }
 
+// export type HeadlineActionTypes = SetHeadlineAction....
 export interface SetHeadlineAction {
-  type: typeof SET_HEADLINE
-  text: string
+  type: typeof SET_HEADLINE;
+  text: string;
 }
 
-interface AddToDoAction {
-  type: typeof ADD_TODO
-  text: string
+interface AddTodoAction {
+  type: typeof ADD_TODO;
+  text: string;
 }
 
-interface UpdateToDoTextAction {
-  type: typeof UPDATE_TODO_TEXT
-  text: string
-  uuid: string
+interface UpdateTodoTextAction {
+  type: typeof UPDATE_TODO_TEXT;
+  text: string;
+  uuid: string;
 }
 
-interface ToggleToDoAction {
-  type: typeof TOGGLE_TODO
-  uuid: string
+interface ToggleTodoAction {
+  type: typeof TOGGLE_TODO;
+  uuid: string;
 }
 
-interface RemoveToDoAction {
-  type: typeof REMOVE_TODO
-  uuid: string
+interface RemoveTodoAction {
+  type: typeof REMOVE_TODO;
+  uuid: string;
 }
 
-export type ToDoActionTypes = AddToDoAction | UpdateToDoTextAction | ToggleToDoAction | RemoveToDoAction
+export type TodoActionTypes =
+  | AddTodoAction
+  | UpdateTodoTextAction
+  | ToggleTodoAction
+  | RemoveTodoAction;
