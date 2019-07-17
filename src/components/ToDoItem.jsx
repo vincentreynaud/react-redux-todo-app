@@ -11,25 +11,26 @@ class ToDoItem extends Component {
   }
 
   render() {
-    const todo = this.props.data;
+    const { uuid, text, done } = this.props.data;
 
+    console.log(this.props)
     return (
-      <tr className="todo-item" data-id={todo.uuid}>
+      <tr className="todo-item" data-id={uuid}>
         <td>
           <div className="custom-control custom-checkbox">
             <input
               type="checkbox"
               className="custom-control-input"
-              value={todo.uuid}
-              id={`todo-done-${todo.uuid}`}
-              checked={todo.done}
+              value={uuid}
+              id={`todo-done-${uuid}`}
+              checked={done}
               onChange={e => {
-                this.props.toggleToDo(todo.uuid)
+                this.props.toggleToDo(uuid)
               }}
             />
             <label
               className="custom-control-label"
-              htmlFor={`todo-done-${todo.uuid}`}
+              htmlFor={`todo-done-${uuid}`}
             >
               &nbsp;
             </label>
@@ -39,9 +40,9 @@ class ToDoItem extends Component {
           <input
             type="text"
             className="form-contol"
-            value={todo.text}
+            value={text}
             onChange={e => {
-              this.props.updateToDoText(todo.uuid, e.target.value);
+              this.props.updateToDoText(uuid, e.target.value);
             }}
             onKeyUp={e => {
               this.handleInputKeyUp(e)
@@ -51,7 +52,7 @@ class ToDoItem extends Component {
         <td className="col-action">
           <i
             className="icon-remove far fa-trash-alt"
-            onClick={e => this.props.removeToDo(todo.uuid)}
+            onClick={e => this.props.removeToDo(uuid)}
           />
         </td>
       </tr>
