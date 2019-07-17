@@ -7,11 +7,15 @@ import TodoForm from "./TodoForm";
 import TodoFilter from "./TodoFilter";
 import TodoList from "./TodoList";
 
-interface Props {
-  headline: string
+import { HeadlineState, FilterState, TodoState } from "../types";
+
+interface AppProps {
+  headline: HeadlineState;
+  filter: FilterState;
+  todoItems: TodoState;
 }
 
-class App extends Component<Props> {
+class App extends Component<AppProps> {
   render() {
     return (
       <>
@@ -26,6 +30,6 @@ class App extends Component<Props> {
   }
 }
 
-export default connect((state: Props) => ({
+export default connect((state: AppProps) => ({
   headline: state.headline
 }))(App);
