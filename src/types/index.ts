@@ -1,3 +1,6 @@
+// export interface Store {...};
+
+// duplicate, find better solution
 export const SET_FILTER = "SET_FILTER";
 export const SET_HEADLINE = "SET_HEADLINE";
 export const ADD_TODO = "ADD_TODO";

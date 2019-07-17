@@ -1,11 +1,18 @@
-import { SET_FILTER, SET_HEADLINE, ADD_TODO, UPDATE_TODO_TEXT, TOGGLE_TODO, REMOVE_TODO, SetFilterAction, Filters, SetHeadlineAction, ToDoActionTypes } from './types'
-
+import { SetFilterAction, Filters, SetHeadlineAction, ToDoActionTypes } from '../types/index'
 
 export const filters: Filters = {
   ALL: "all",
   UNDONE: "undone",
   DONE: "done"
 };
+
+// Action Types
+export const SET_FILTER = "SET_FILTER";
+export const SET_HEADLINE = "SET_HEADLINE";
+export const ADD_TODO = "ADD_TODO";
+export const UPDATE_TODO_TEXT = "UPDATE_TODO_TEXT";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const REMOVE_TODO = "REMOVE_TODO";
 
 // Action creators
 export const setFilter = function (filter: string): SetFilterAction {
