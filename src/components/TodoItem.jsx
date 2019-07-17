@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateTodoText, toggleTodo, removeTodo } from "../actions/index";
 
@@ -8,7 +8,7 @@ class TodoItem extends Component {
     if (e.keyCode === 13) {
       e.target.blur();
     }
-  }
+  };
 
   render() {
     const todo = this.props.data;
@@ -24,7 +24,7 @@ class TodoItem extends Component {
               id={`todo-done-${todo.uuid}`}
               checked={todo.done}
               onChange={e => {
-                this.props.toggleTodo(todo.uuid)
+                this.props.toggleTodo(todo.uuid);
               }}
             />
             <label
@@ -38,13 +38,13 @@ class TodoItem extends Component {
         <td className="col-1">
           <input
             type="text"
-            className="form-contol"
+            className="form-control"
             value={todo.text}
             onChange={e => {
               this.props.updateTodoText(todo.uuid, e.target.value);
             }}
             onKeyUp={e => {
-              this.handleInputKeyUp(e)
+              this.handleInputKeyUp(e);
             }}
           />
         </td>
@@ -59,8 +59,11 @@ class TodoItem extends Component {
   }
 }
 
-export default connect(state => ({}), {
-  updateTodoText,
-  toggleTodo,
-  removeTodo
-})(TodoItem);
+export default connect(
+  state => ({}),
+  {
+    updateTodoText,
+    toggleTodo,
+    removeTodo
+  }
+)(TodoItem);

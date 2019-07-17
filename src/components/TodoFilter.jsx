@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import { setFilter } from "../actions/index";
 
 class TodoFilter extends Component {
-  filters = ["all", "undone", "done"];
+  filters = ["all", "undone", "done"]; // import instead
 
   render() {
+    const { setFilter } = this.props;
+
     return (
       <div className="todo-filters text-right">
         <div
@@ -17,8 +19,8 @@ class TodoFilter extends Component {
             <button
               type="button"
               className={`btn btn-light`}
-              onClick={e => {
-                this.props.setFilter(filter);
+              onClick={() => {
+                setFilter(filter);
               }}
               key={filter}
             >
@@ -31,8 +33,11 @@ class TodoFilter extends Component {
   }
 }
 
-export default connect(state => ({}), {
-  setFilter
-})(TodoFilter);
+export default connect(
+  state => ({}),
+  {
+    setFilter
+  }
+)(TodoFilter);
 
 // removed active filter from button classnames: ${this.props.activeFilter === filter ? "active" : ""}

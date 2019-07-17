@@ -25,7 +25,7 @@ class TodoList extends Component {
         <table className="todo-items table table-borderless">
           <tbody>
             {this.filteredItems().map(item => {
-              return <TodoItem key={`todo-item-${item.uuid}`} data={item} />
+              return <TodoItem key={`todo-item-${item.uuid}`} data={item} />;
             })}
           </tbody>
         </table>
@@ -35,6 +35,6 @@ class TodoList extends Component {
 }
 
 export default connect(state => ({
-  items: state.toDoItems,
+  items: state.todoItems,
   filter: state.filter
 }))(TodoList);
