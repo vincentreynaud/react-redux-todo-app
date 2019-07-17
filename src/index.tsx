@@ -1,5 +1,5 @@
 // React
-import React from "react";
+import * as React from "react";
 import { render } from "react-dom";
 
 // Redux
@@ -14,10 +14,10 @@ import Router from "./components/Router";
 import '@fortawesome/fontawesome-free/css/all.css';
 import "./scss/style.scss";
 
-const store = createStore(appReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(appReducer);
 
 render(
-  <Provider store={store}>
+  <Provider store={store} >
     <Router />
   </Provider>,
   document.querySelector("#main")

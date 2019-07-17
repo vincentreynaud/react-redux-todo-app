@@ -16,9 +16,7 @@ class ToDoFilter extends Component {
           {this.filters.map(filter => (
             <button
               type="button"
-              className={`btn btn-light ${
-                this.props.activeFilter === filter ? "active" : ""
-                }`}
+              className={`btn btn-light`}
               onClick={e => {
                 this.props.setFilter(filter);
               }}
@@ -36,3 +34,5 @@ class ToDoFilter extends Component {
 export default connect(state => ({}), {
   setFilter
 })(ToDoFilter);
+
+// removed active filter from button classnames: ${this.props.activeFilter === filter ? "active" : ""}

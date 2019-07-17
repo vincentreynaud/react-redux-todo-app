@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import * as React from "react";
+import { Component } from "react";
 import { connect } from "react-redux";
 import { setHeadline } from "../actions/index";
 
-class Header extends Component {
+class Header extends Component<any, any> {
   componentDidMount() {
     this.props.setHeadline("My ToDo List")
   }
@@ -10,12 +11,12 @@ class Header extends Component {
   render() {
     return (
       <div className="jumbotron container">
-        <input 
-          type="text" 
-          className="headline" 
-          value={this.props.headline} 
+        <input
+          type="text"
+          className="headline"
+          value={this.props.headline}
           onChange={e => {
-          this.props.setHeadline(e.target.value)
+            this.props.setHeadline(e.target.value)
           }}
         />
       </div>
