@@ -18,6 +18,12 @@ export interface TodoState {
   [uuid: string]: TodoItem;
 }
 
+export interface AppState {
+  headline: HeadlineState;
+  filter: FilterState;
+  todoItems: TodoState;
+}
+
 // Action Types
 export const SET_FILTER = "SET_FILTER";
 export const SET_HEADLINE = "SET_HEADLINE";

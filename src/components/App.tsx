@@ -9,13 +9,9 @@ import TodoList from "./TodoList";
 
 import { HeadlineState, FilterState, TodoState } from "../types";
 
-interface AppProps {
-  headline: HeadlineState;
-  filter: FilterState;
-  todoItems: TodoState;
-}
+import { AppState } from "../types";
 
-class App extends Component<AppProps> {
+class App extends Component<AppState> {
   render() {
     return (
       <>
@@ -30,6 +26,6 @@ class App extends Component<AppProps> {
   }
 }
 
-export default connect((state: AppProps) => ({
+export default connect((state: AppState) => ({
   headline: state.headline
 }))(App);
