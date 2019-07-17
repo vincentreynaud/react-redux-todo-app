@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToDo } from "../actions/index";
+import { addTodo } from "../actions/index";
 
-
-class ToDoForm extends Component {
-  textInput = React.createRef()
+class TodoForm extends Component {
+  textInput = React.createRef();
 
   handleSubmit = e => {
     e.preventDefault();
     const text = this.textInput.current.value.trim();
-    this.props.addToDo(text);
-    e.currentTarget.reset()
-  }
+    this.props.addTodo(text);
+    e.currentTarget.reset();
+  };
 
   render() {
     return (
@@ -24,7 +23,8 @@ class ToDoForm extends Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />
+            &nbsp;Add item
           </button>
         </div>
       </form>
@@ -32,6 +32,9 @@ class ToDoForm extends Component {
   }
 }
 
-export default connect(state => ({}), {
-  addToDo
-})(ToDoForm);
+export default connect(
+  state => ({}),
+  {
+    addTodo
+  }
+)(TodoForm);

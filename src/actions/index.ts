@@ -1,5 +1,18 @@
-import { SET_FILTER, SET_HEADLINE, ADD_TODO, UPDATE_TODO_TEXT, TOGGLE_TODO, REMOVE_TODO, SetFilterAction, Filters, SetHeadlineAction, ToDoActionTypes } from './types'
+import {
+  SetFilterAction,
+  Filters,
+  SetHeadlineAction,
+  TodoActionTypes
+} from "../types/index";
 
+import {
+  SET_FILTER,
+  SET_HEADLINE,
+  ADD_TODO,
+  UPDATE_TODO_TEXT,
+  TOGGLE_TODO,
+  REMOVE_TODO
+} from "../types";
 
 export const filters: Filters = {
   ALL: "all",
@@ -8,28 +21,29 @@ export const filters: Filters = {
 };
 
 // Action creators
-export const setFilter = function (filter: string): SetFilterAction {
-  return { type: SET_FILTER, filter }
-}
+export const setFilter = function(filter: string): SetFilterAction {
+  return { type: SET_FILTER, filter };
+};
 
-export const setHeadline = function (text: string): SetHeadlineAction {
-  return { type: SET_HEADLINE, text }
-}
+export const setHeadline = function(text: string): SetHeadlineAction {
+  return { type: SET_HEADLINE, text };
+};
 
-export const addToDo = function (text: string): ToDoActionTypes {
+export const addTodo = function(text: string): TodoActionTypes {
   return { type: ADD_TODO, text };
 };
 
-export const updateToDoText = function (uuid: string, text: string): ToDoActionTypes {
+export const updateTodoText = function(
+  uuid: string,
+  text: string
+): TodoActionTypes {
   return { type: UPDATE_TODO_TEXT, text, uuid };
 };
 
-export const toggleToDo = function (uuid: string): ToDoActionTypes {
+export const toggleTodo = function(uuid: string): TodoActionTypes {
   return { type: TOGGLE_TODO, uuid };
 };
 
-export const removeToDo = function (uuid: string): ToDoActionTypes {
+export const removeTodo = function(uuid: string): TodoActionTypes {
   return { type: REMOVE_TODO, uuid };
 };
-
-
