@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ToDoItem from "./ToDoItem";
+import TodoItem from "./TodoItem";
 
-class ToDoList extends Component {
+class TodoList extends Component {
   filteredItems = () => {
     let itemsFiltered = [];
 
@@ -25,7 +25,7 @@ class ToDoList extends Component {
         <table className="todo-items table table-borderless">
           <tbody>
             {this.filteredItems().map(item => {
-              return <ToDoItem key={`todo-item-${item.uuid}`} data={item} />
+              return <TodoItem key={`todo-item-${item.uuid}`} data={item} />
             })}
           </tbody>
         </table>
@@ -37,4 +37,4 @@ class ToDoList extends Component {
 export default connect(state => ({
   items: state.toDoItems,
   filter: state.filter
-}))(ToDoList);
+}))(TodoList);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { updateToDoText, toggleToDo, removeToDo } from "../actions/index";
+import { updateTodoText, toggleTodo, removeTodo } from "../actions/index";
 
-class ToDoItem extends Component {
+class TodoItem extends Component {
   handleInputKeyUp = e => {
     // Remove focus when the [Enter] key is pressed
     if (e.keyCode === 13) {
@@ -24,7 +24,7 @@ class ToDoItem extends Component {
               id={`todo-done-${todo.uuid}`}
               checked={todo.done}
               onChange={e => {
-                this.props.toggleToDo(todo.uuid)
+                this.props.toggleTodo(todo.uuid)
               }}
             />
             <label
@@ -41,7 +41,7 @@ class ToDoItem extends Component {
             className="form-contol"
             value={todo.text}
             onChange={e => {
-              this.props.updateToDoText(todo.uuid, e.target.value);
+              this.props.updateTodoText(todo.uuid, e.target.value);
             }}
             onKeyUp={e => {
               this.handleInputKeyUp(e)
@@ -51,7 +51,7 @@ class ToDoItem extends Component {
         <td className="col-action">
           <i
             className="icon-remove far fa-trash-alt"
-            onClick={e => this.props.removeToDo(todo.uuid)}
+            onClick={e => this.props.removeTodo(todo.uuid)}
           />
         </td>
       </tr>
@@ -60,7 +60,7 @@ class ToDoItem extends Component {
 }
 
 export default connect(state => ({}), {
-  updateToDoText,
-  toggleToDo,
-  removeToDo
-})(ToDoItem);
+  updateTodoText,
+  toggleTodo,
+  removeTodo
+})(TodoItem);

@@ -3,9 +3,9 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 import Header from "./Header";
-import ToDoForm from "./ToDoForm";
-import ToDoFilter from "./ToDoFilter";
-import ToDoList from "./ToDoList";
+import TodoForm from "./TodoForm";
+import TodoFilter from "./TodoFilter";
+import TodoList from "./TodoList";
 
 interface Props {
   headline: string
@@ -17,9 +17,9 @@ class App extends Component<Props> {
       <>
         <Header headline={this.props.headline} />
         <div className="container">
-          <ToDoForm />
-          <ToDoFilter />
-          <ToDoList />
+          <TodoForm />
+          <TodoFilter />
+          <TodoList />
         </div>
       </>
     );

@@ -1,4 +1,4 @@
-import { SetFilterAction, Filters, SetHeadlineAction, ToDoActionTypes } from '../types/index'
+import { SetFilterAction, Filters, SetHeadlineAction, TodoActionTypes } from '../types/index'
 
 export const filters: Filters = {
   ALL: "all",
@@ -23,19 +23,19 @@ export const setHeadline = function (text: string): SetHeadlineAction {
   return { type: SET_HEADLINE, text }
 }
 
-export const addToDo = function (text: string): ToDoActionTypes {
+export const addTodo = function (text: string): TodoActionTypes {
   return { type: ADD_TODO, text };
 };
 
-export const updateToDoText = function (uuid: string, text: string): ToDoActionTypes {
+export const updateTodoText = function (uuid: string, text: string): TodoActionTypes {
   return { type: UPDATE_TODO_TEXT, text, uuid };
 };
 
-export const toggleToDo = function (uuid: string): ToDoActionTypes {
+export const toggleTodo = function (uuid: string): TodoActionTypes {
   return { type: TOGGLE_TODO, uuid };
 };
 
-export const removeToDo = function (uuid: string): ToDoActionTypes {
+export const removeTodo = function (uuid: string): TodoActionTypes {
   return { type: REMOVE_TODO, uuid };
 };
 
