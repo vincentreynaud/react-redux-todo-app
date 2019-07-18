@@ -2,10 +2,7 @@ import {
   SetFilterAction,
   Filters,
   SetHeadlineAction,
-  TodoActionTypes
-} from "../types/index";
-
-import {
+  TodoActionTypes,
   SET_FILTER,
   SET_HEADLINE,
   ADD_TODO,
@@ -14,6 +11,7 @@ import {
   REMOVE_TODO
 } from "../types";
 
+// Other constants
 export const filters: Filters = {
   ALL: "all",
   UNDONE: "undone",
